@@ -1,0 +1,54 @@
+{% extends 'scrape/base.html' %}
+
+{% block content %}
+    <div style="width: 100%; overflow: hidden;">
+        <div style="width: 600px; float: left;">
+            <h2>Frequencies of each words of the first website</h2>
+            <ul style="display: inline-block">      
+                {% for unq in funq %}
+                    <li style>{{ unq }}</li>
+                {% endfor %}                
+            </ul>
+            <ul style="display: inline-block">
+                {% for freq in ffreqs %}
+                    <li>{{freq}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    
+        <div style="margin-left: 620px;">
+            <h2>Frequencies of each words of the second website</h2>
+            <ul style="display: inline-block">      
+                {% for unq in sunq %}
+                    <li style>{{ unq }}</li>
+                {% endfor %}                
+            </ul>
+            <ul style="display: inline-block">
+                {% for freq in sfreqs %}
+                    <li>{{freq}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <hr style="border-top: 1px dashed white">
+    <div style="display: inline-block;margin: 10px;">
+        <h3>Keywords for the first website</h3>
+        <ul>
+            {% for data in fdatas %}
+               <li>{{ data }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div style="display: inline-block">
+        <h3>Keywords for the second website</h3>
+        <ul>
+            {% for data in sdatas %}
+               <li>{{ data }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h1 style="margin: 10px;">Similarity : %{{comp}}</h1>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends 'scrape/base.html' %}
+
+{% block content %}
+
+<form class="form-inline" action="{% url 'scrape:send' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="inputPassword2" placeholder="First URL" name="firstUrl" autocomplete="off">
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <input type="text" class="form-control" id="inputPassword2" placeholder="Second URL" name="secondUrl" autocomplete="off">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Compare</button>
+</form>
+
+{% endblock content %}
